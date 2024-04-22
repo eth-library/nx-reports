@@ -1,0 +1,33 @@
+services:
+  mariadb:
+    ports:
+      - 3396:3306
+    stop_grace_period: 120s
+    image: mariadb:10.11
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      #- ./etc/matomo/my.cnf:/etc/my.cnf
+      #- ./etc/matomo/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      #- ./data/matomo/data:/var/lib/mysql
+      - mariadb:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=matomo
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+
+  matomo:
+    build: ./docker/matomo
+    ports:
+      - 8990:8000
+    entrypoint: /bin/sh
+    command: -c "cd /var/www/matomo && php -S 0.0.0.0:8000"
+    depends_on:
+      - mariadb
+    volumes:
+      #- ./data/matomo/matomo:/var/www/matomo
+      - matomo:/var/www/matomo
+      - ../:/var/www/matomo/plugins/NxReporting
+
+volumes:
+  mariadb:
+  matomo:

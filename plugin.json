@@ -1,0 +1,29 @@
+{
+    "name": "NxReporting",
+    "description": "NX Reporting",
+    "version": "5.0.0",
+    "theme": false,
+    "require": {
+        "matomo": ">=5.0.0-b1,<6.0.0-b1"
+    },
+    "authors": [
+        {
+            "name": "NEXTENSION",
+            "email": "hello@nextension.com",
+            "homepage": "https://nextension.com"
+        }
+    ],
+    "support": {
+        "email": "support@nextension.com",
+        "issues": "",
+        "forum": "",
+        "irc": "",
+        "wiki": "",
+        "source": "",
+        "docs": "",
+        "rss": ""
+    },
+    "homepage": "",
+    "license": "MIT",
+    "keywords": []
+}

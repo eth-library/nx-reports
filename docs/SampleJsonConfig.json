@@ -1,0 +1,86 @@
+{
+  "version": "0.2",
+  "reports": [
+    {
+      "id": "journals",
+      "name": "journals",
+      "display": true,
+      "groupBy": "custom_dimension_2",
+      "extraColumns": {
+        "custom_dimension_1": {
+          "label": "prefix"
+        },
+        "custom_dimension_3": {
+          "label": "uniqueId"
+        }
+      },
+      "columns": [
+        {
+          "id": "nb_ft",
+          "where": "log_action1.type=12 AND log_action2.name = 'Copy fulltext'",
+          "selects": [
+            "COUNT(log_action1.name) AS nb_ft",
+            "COUNT(DISTINCT CONCAT(log_action1.name,log_link_visit_action.idvisitor)) AS nb_unique_ft",
+            "log_action1.name as name",
+            "log_action1.type as type"
+          ],
+          "joinColumns": [
+            "idaction_name",
+            "idaction_event_action"
+          ],
+          "results": [
+            "nb_unique_ft",
+            "nb_ft"
+          ],
+          "show": [
+            "nb_unique_ft",
+            "nb_ft"
+          ]
+        },
+        {
+          "id": "nb_unique_downloads",
+          "where": "log_action1.type=3",
+          "selects": [
+            "COUNT(log_action1.name) AS nb_downloads",
+            "COUNT(DISTINCT CONCAT(log_action1.name,log_link_visit_action.idvisitor)) AS nb_unique_downloads",
+            "log_action1.name as name",
+            "log_action1.type as type"
+          ],
+          "joinColumns": [
+            "idaction_url"
+          ],
+          "results": [
+            "nb_unique_downloads",
+            "nb_downloads"
+          ],
+          "show": [
+            "nb_unique_downloads",
+            "nb_downloads"
+          ]
+        },
+        {
+          "id": "nb_images",
+          "where": "log_action1.type=12 AND log_action2.name = 'Download image'",
+          "selects": [
+            "COUNT(log_action1.name) AS nb_images",
+            "COUNT(DISTINCT CONCAT(log_action1.name,log_link_visit_action.idvisitor)) AS nb_unique_images",
+            "log_action1.name as name",
+            "log_action1.type as type"
+          ],
+          "joinColumns": [
+            "idaction_name",
+            "idaction_event_action"
+          ],
+          "results": [
+            "nb_images",
+            "nb_unique_images"
+          ],
+          "show": [
+            "nb_images",
+            "nb_unique_images"
+          ]
+        }
+      ]
+    }
+  ]
+}
