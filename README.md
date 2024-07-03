@@ -25,7 +25,7 @@ For E-Periodica, create three new custom "Action" dimensions (Admin -> Websites 
 a) Take note of the IDs displayed, they need to be in sync with the E-Periodica client.
 
 b) Take note of the position of the custom dimension in the actions list,
-this is the id that needs to be used in the JSON configuration (e.g. position 1, external id 3 => customdimension1 in actions table)
+this is the id that needs to be used in the JSON configuration (e.g. position 2, external id 3 => customdimension2 in matomo_log_visit_action table)
 
 ### Copy sample JSON and adjust ids
 

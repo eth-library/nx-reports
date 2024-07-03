@@ -5,13 +5,13 @@
       "id": "journals",
       "name": "journals",
       "display": true,
-      "groupBy": "custom_dimension_2",
+      "groupBy": "custom_dimension_4",
       "extraColumns": {
-        "custom_dimension_1": {
-          "label": "prefix"
+        "custom_dimension_2": {
+          "label": "title"
         },
         "custom_dimension_3": {
-          "label": "uniqueId"
+          "label": "prefix"
         }
       },
       "columns": [
