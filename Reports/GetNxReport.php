@@ -144,8 +144,9 @@ class GetNxReport extends Base
         // array('label', 'nb_downloads', 'nb_unique_downloads', 'nb_ft', 'nb_unique_ft')
         $extraColumns = !empty($this->reportConfig->extraColumns) ? (array)$this->reportConfig->extraColumns : [];
         foreach ($extraColumns as $key => $value) {
+            // translates custom_dimension_[id] and further column names
             if (!empty($value->label)) {
-                $view->config->addTranslation($key, Piwik::translate($value->label));
+                $view->config->addTranslation($key, Piwik::translate('NxReporting_' . $value->label));
             }
         }
         $view->config->columns_to_display = array_merge(array_keys($extraColumns), $this->columns, $this->metrics);
