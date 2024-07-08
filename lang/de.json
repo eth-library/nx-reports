@@ -1,0 +1,19 @@
+{
+  "NxReporting": {
+    "Category": "NX Berichte",
+    "nb_unique_ft": "Eindeutige Volltexte kopiert",
+    "nb_downloads": "Downloads PDF",
+    "Image_Downloads": "Downloads Bilder",
+    "Report_Journals": "Zeitschriften",
+    "nb_unique_downloads": "Eindeutige Downloads PDF",
+    "nb_ft": "Volltexte kopiert",
+    "nb_images": "Downloads Bilder",
+    "nb_unique_images": "Eindeutige Downloads Bilder",
+    "nb_prefix": "Präfix",
+    "Report_journals": "Zeitschriften",
+    "journals": "Zeitschriften",
+    "title": "Zeitschriftentitel",
+    "prefix": "Zeitschriftenpräfix",
+    "label": "Eindeutige Kennung"
+  }
+}

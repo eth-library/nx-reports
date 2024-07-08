@@ -1,0 +1,16 @@
+{
+  "NxReporting": {
+    "Category": "NX Reporting",
+    "nb_unique_ft": "Unique fulltexts copied",
+    "nb_unique_downloads": "Unique PDF downloads",
+    "nb_downloads": "PDF downloads",
+    "nb_ft": "Fulltexts copied",
+    "nb_images": "Image downloads",
+    "nb_unique_images": "Unique image downloads",
+    "Report_journals": "Journals",
+    "journals": "Journals",
+    "title": "Journal title",
+    "prefix": "Journal prefix",
+    "label": "Unique Id"
+  }
+}
