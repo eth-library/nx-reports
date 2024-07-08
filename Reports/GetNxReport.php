@@ -149,7 +149,7 @@ class GetNxReport extends Base
                 $view->config->addTranslation($key, Piwik::translate('NxReporting_' . $value->label));
             }
         }
-        $view->config->columns_to_display = array_merge(array_keys($extraColumns), $this->columns, $this->metrics);
+        $view->config->columns_to_display = array_merge(['label'],array_keys($extraColumns), array_diff($this->columns,['label']), $this->metrics);
         $view->config->removeColumnToDisplay('nb_users');
         $view->config->removeColumnToDisplay('nb_actions');
     }
